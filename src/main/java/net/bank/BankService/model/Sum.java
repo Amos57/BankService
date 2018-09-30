@@ -3,13 +3,13 @@ package net.bank.BankService.model;
 import java.math.BigDecimal;
 
 public class Sum {
-    private BigDecimal residue;
+    private BigDecimal yourSum;
 
-	public BigDecimal getResidue() {
-		return residue;
+	public BigDecimal getYourSum() {
+		return yourSum;
 	}
 
-	public void setResidue(BigDecimal residue) {
-		this.residue = residue;
+	public void setYourSum(BigDecimal yourSum) {
+		this.yourSum = yourSum;
 	}
 }
