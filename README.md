@@ -30,24 +30,29 @@ spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect - dialect
 
 5. Access CustomerService using next REST requests:
 
-POST: http://localhost:8080/bankaccount/{numAccount} - create new account
+POST: http://localhost:8080/bankaccount/10011 - create new account
 Request body:
 {
-	"numberAccount": numAccount,
+	"numberAccount":10011,
 	"sum": "0"
 }
 
-PUT:  http://localhost:8080/bankaccount/{numAccount}/deposit/{sum} - put sum in account
+PUT:  http://localhost:8080/bankaccount/10011/deposit/100 - put sum in account
 
 PUT: localhost:8080/bankaccount/{numAccaunt}/withdraw/{sum}
 Request body:
 {
-	"sum":sum
+        "numberAccount":10011,
+	"sum":100
+}
+PUT:  http://localhost:8080/bankaccount/10011/withdraw/25
+{
+       sum:25
 }
 
 GET: localhost:8080/bankaccount/10000/balance
 Request body:
  
-  456
+  75
 
 
