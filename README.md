@@ -37,18 +37,19 @@ Request body:
 	"sum": "0"
 }
 
-PUT:  http://localhost:8080/bankaccount/10011/deposit/100 - put sum in account
-
-PUT: localhost:8080/bankaccount/{numAccaunt}/withdraw/{sum}
+PUT:  http://localhost:8080/bankaccount/10011/deposit/100 
 Request body:
 {
         "numberAccount":10011,
 	"sum":100
 }
-PUT:  http://localhost:8080/bankaccount/10011/withdraw/25
+
+PUT: localhost:8080/bankaccount/10011/withdraw/25
+Request body:
 {
-       sum:25
+       "yourSum":25
 }
+
 
 GET: localhost:8080/bankaccount/10000/balance
 Request body:
