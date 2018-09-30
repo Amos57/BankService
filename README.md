@@ -44,14 +44,14 @@ Request body:
 	"sum":100
 }
 
-PUT: localhost:8080/bankaccount/10011/withdraw/25
+PUT: http://localhost:8080/bankaccount/10011/withdraw/25
 Request body:
 {
        "yourSum":25
 }
 
 
-GET: localhost:8080/bankaccount/10000/balance
+GET: http://localhost:8080/bankaccount/10000/balance
 Request body:
  
   75
