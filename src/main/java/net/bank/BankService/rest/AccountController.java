@@ -59,19 +59,21 @@ public class AccountController {
     	
     	
    @RequestMapping(value="{numAccount}/withdraw/{sum}",method=RequestMethod.PUT)
-    	public ResponseEntity<Sum> takeSum(@PathVariable("numAccount") int numAccount,@PathVariable("sum")double sum){
-	   if(sum<=0 || numAccount <=9999 || numAccount >=100000)
+    	public ResponseEntity<Sum> takeSum(@PathVariable("numAccount") int numAccount,@PathVariable("sum")BigDecimal sum){
+
+
+	 if(sum.floatValue()<=0 || numAccount <=9999 || numAccount >=100000)
    		return new ResponseEntity<Sum>(HttpStatus.BAD_REQUEST);
-	   
+
 		Account account=serviceAccount.getAccount(numAccount);
 		Sum sumOb=null;
     	if(account==null)
     		return new ResponseEntity<Sum>(sumOb,HttpStatus.NOT_FOUND);
     	sumOb= new Sum();
-	   BigDecimal res=account.getSum().subtract(new BigDecimal(sum));
+	   BigDecimal res=account.getSum().subtract(sum);
 	   if(res.floatValue()<0)
 		   return new ResponseEntity<Sum>(sumOb,HttpStatus.CONFLICT);
-	   sumOb.setSum(res);
+	   sumOb.setResidue(res);
 	   account.setSum(res);
 	   serviceAccount.takeSum(account);
     	
