@@ -73,7 +73,7 @@ public class AccountController {
 	   BigDecimal res=account.getSum().subtract(sum);
 	   if(res.floatValue()<0)
 		   return new ResponseEntity<Sum>(sumOb,HttpStatus.CONFLICT);
-	   sumOb.setResidue(res);
+	   sumOb.setYourSum(res);
 	   account.setSum(res);
 	   serviceAccount.takeSum(account);
     	
