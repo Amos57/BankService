@@ -1,0 +1,6 @@
+net\bank\BankService\service\ServiceAccount.class
+net\bank\BankService\rest\AccountController.class
+net\bank\BankService\model\Account.class
+net\bank\BankService\service\SwrviceAccauntImp.class
+net\bank\BankService\repository\AccountRepository.class
+net\bank\BankService\Main.class
